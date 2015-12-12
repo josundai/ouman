@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache name="metamore" updateCheck="false">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- default cache -->
+    <defaultCache name="default"
+                  maxElementsInMemory="2500"
+                  eternal="false"
+                  memoryStoreEvictionPolicy="LRU"
+                  overflowToDisk="true"
+                  timeToIdleSeconds="1800"
+                  timeToLiveSeconds="0"
+                  clearOnFlush="true">
+    </defaultCache>
+
+    <!-- query cache -->
+    <cache name="org.hibernate.cache.StandardQueryCache"
+           maxElementsInMemory="5000"
+           timeToLiveSeconds="120">
+    </cache>
+
+
+    <!-- metadata caches -->
+    <cache name="CLADI_1.1"
+           maxElementsInMemory="1000"
+           eternal="true">
+    </cache>
+    <cache name="CLADI_2.0"
+           maxElementsInMemory="200"
+           eternal="true">
+    </cache>
+    <cache name="CLADI_3.0"
+           maxElementsInMemory="1000"
+           eternal="true">
+    </cache>
+    <cache name="private:CISCO_DECORATOR_DM"
+           maxElementsInMemory="1000"
+           eternal="true">
+    </cache>
+
+</ehcache>

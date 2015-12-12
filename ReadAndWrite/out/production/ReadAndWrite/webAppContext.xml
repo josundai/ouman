@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+    <import resource="classpath:webAppContext-props.xml"/>
+    <import resource="classpath:webAppContext-dao.xml"/>
+    <import resource="classpath:webAppContext-dataSource.xml"/>
+    <import resource="classpath:webAppContext-transaction.xml"/>
+    <context:component-scan base-package="com.qiaosheng.app"/>
+    <context:component-scan base-package="com.qiaosheng.app.output"/>
+    <context:component-scan base-package="com.qiaosheng.app.service"/>
+    <context:component-scan base-package="com.qiaosheng.common.pojo"/>
+    <context:component-scan base-package="com.qiaosheng.common.persistence"/>
+    <context:component-scan base-package="com.qiaosheng.common.utils"/>
+
+
+    <aop:aspectj-autoproxy/>
+
+    <!-- Validator bean >
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.apache.bval.jsr303.ApacheValidationProvider" />
+    </bean-->
+
+</beans>
